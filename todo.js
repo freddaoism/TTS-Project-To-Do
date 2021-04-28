@@ -27,6 +27,9 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 
+
+
+
 // Make a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
@@ -39,6 +42,8 @@ function newElement() {
     document.getElementById("myUL").appendChild(li);
   }
   document.getElementById("myInput").value = "";
+
+  
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -54,3 +59,7 @@ function newElement() {
   }
 }
 
+document.querySelector("#myUL").addEventListener('click', function(e){
+  e.target.innerHTML = e.target.innerHTML.strike();
+  setTimeout(function(){e.target.remove()}, 1000);
+});
